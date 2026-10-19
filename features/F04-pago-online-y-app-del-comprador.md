@@ -169,9 +169,8 @@ Punta a punta en el navegador (Playwright, 2026-10-20, venue demo con DashTest):
 
 ## 9. Pendiente
 
-- Reembolsar automáticamente los pagos aprobados tarde (`refund_required`), dentro de cancelaciones y
-  reembolsos (FR-25, fase 3), con la cola de revisión de la Admin Payments UI.
-- Envío de las entradas por correo al confirmar (FR-10.2, fase 3).
+- ~~Reembolsar automáticamente los pagos aprobados tarde~~: hecho en [F05](F05-cancelaciones-reembolsos-y-correos.md) §5.3.
+- ~~Envío de las entradas por correo al confirmar~~: hecho en [F05](F05-cancelaciones-reembolsos-y-correos.md) §7.
 - Recuperar una reserva desde otro dispositivo (hoy el token vive en el navegador donde se compró).
   Opciones: enlace mágico al correo, o cuenta de comprador.
 - Configurar pasarelas desde `mbtickets-web`. La API existe (F02), falta la pantalla en este frontend; en

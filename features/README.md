@@ -9,6 +9,7 @@ pruebas y pendientes. Los requerimientos están en [`../requirements`](../requir
 | F02 | [Pasarelas de pago online en el core](F02-pasarelas-de-pago-checkout-core.md) | Base de FR-26 | Terminada (ramas `feat/checkout-core`) |
 | F03 | [Entradas con QR firmado y control de acceso](F03-entradas-firmadas-y-control-de-acceso.md) | FR-08, FR-09, NFR-03, NFR-04 | Terminada (rama `feat/signed-tickets`) |
 | F04 | [Pago online de reservas y app del comprador](F04-pago-online-y-app-del-comprador.md) | FR-26, FR-01, HU-29 | Terminada (ramas `feat/booking-checkout`, `feat/buyer-app`) |
+| F05 | [Cancelaciones, reembolsos y correos al comprador](F05-cancelaciones-reembolsos-y-correos.md) | FR-25, FR-26.3, FR-10.2 | Terminada (ramas `feat/cancellations-refunds`, core `feat/checkout-core`) |
 
 Repositorios:
 
