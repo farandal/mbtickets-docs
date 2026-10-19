@@ -9,7 +9,8 @@
 **HU-01:** Como visitante, quiero buscar eventos por categoría, fecha, venue y sala sin necesidad de iniciar sesión, para decidir a cuál asistir. *(FR-01)*
 - AC: los resultados se filtran en tiempo real; la disponibilidad mostrada refleja el inventario real al momento de la consulta (no una copia cacheada obsoleta).
 
-**HU-01b:** Como visitante de un cine, quiero ver la cartelera completa del venue (todas las salas, todas las funciones del día), para elegir horario y sala. *(FR-01.3)*
+**HU-01b:** Como visitante de un cine, quiero ver la cartelera completa del venue (todas las salas, todas las funciones del día), para elegir horario y sala desde app app.mbtickets.sample *(FR-01.3)*
+Se debe poder acceder al tenant por {slug}.mbtickets.com o app.mbtickets.sample/app/{slug}
 
 **HU-02:** Como comprador, quiero seleccionar un asiento específico en el mapa de la sala (cuando la sala tiene mapa asociado desde Inamap) o una cantidad de admisión general/sector, para asegurar mi lugar antes de pagar. *(FR-05)*
 - AC: al seleccionar, el inventario queda en estado de *hold* temporal visible solo para mí durante el checkout; si no completo el pago dentro del tiempo límite, el hold se libera automáticamente.
@@ -36,6 +37,9 @@
 - AC: el evento no aparece en el descubrimiento público (FR-01) hasta que lo publico explícitamente.
 
 **HU-06b:** Como organizador de un venue con múltiples salas (ej. un multiplex), quiero crear y administrar cada sala por separado (capacidad, nombre, mapa asociado si corresponde), para luego programar funciones de distintas películas/eventos en cada una de forma independiente. *(FR-14.1, FR-14.2)*
+
+**HU-06c:** Como organizador, quiero definir hasta cuándo se pueden comprar entradas de mi evento (una fecha máxima, o un plazo antes de cada función), para cerrar la venta a tiempo para la logística del recinto. *(FR-05.3)*
+- AC: después del cierre, ningún canal (online, boletería, kiosko) acepta una compra para esa función, y la función deja de aparecer en el buscador público; si defino una fecha y también un plazo, rige el que cierre antes.
 
 **HU-07:** Como organizador, quiero configurar horarios recurrentes y excepciones de fecha para un evento (ej. funciones todos los sábados, excepto feriados), para no tener que crear cada función manualmente. *(FR-03, modelo EventType/ScheduleRule/DateOverride)*
 - AC: una excepción de fecha anula correctamente la regla recurrente para esa fecha puntual, sin afectar las demás funciones.
