@@ -238,11 +238,30 @@ El público compra en la app **MBTickets** (en local, `http://localhost:5190`):
 3. Paga con la pasarela del local (Webpay o Mercado Pago).
 4. Recibe sus entradas en pantalla y por correo.
 
-Para vender online, el local necesita una **pasarela de pago activa**. Hoy no se configura desde el
-panel: pídeselo al equipo de la plataforma. Sin pasarela, la app muestra la función pero indica que se
-compra en la boletería. Cada local puede tener su propia pasarela.
+Para vender online, el local necesita una **pasarela de pago activa**. Sin pasarela, la app muestra la
+función pero indica que se compra en la boletería. Ver el paso 6c.
 
 Puedes compartir el enlace directo a una función: `…/funcion/<id de la función>`.
+
+## 6c. Configurar la pasarela de pago
+
+Qué proveedores puedes usar (DashTest, Transbank Webpay, Mercado Pago) lo habilita la plataforma
+para tu cuenta. Si no ves el que necesitas, pídeselo al equipo de la plataforma.
+
+Menú **Ventas → Pasarelas de pago** → **+**.
+
+1. Ponle un nombre ("Webpay del teatro") y elige el **Proveedor** entre los habilitados.
+2. **Venues que la usan**: marca los locales que cobran con ella. (Si eres administrador de un local,
+   la pasarela queda para tu local y este campo no aparece.)
+3. Guarda. Se abre la pantalla de la pasarela con sus **credenciales**: cada proveedor pide las
+   suyas (por ejemplo, Transbank pide el código de comercio y si es modo de pruebas).
+4. **Guardar y verificar**: el proveedor revisa las credenciales y, si son válidas, la pasarela queda
+   **Activa**.
+5. **Usar como predeterminada del venue**: es la que usa la app para cobrar en ese local. La primera
+   pasarela activa de un local queda como predeterminada.
+
+El administrador de un local puede configurar y elegir como predeterminada una pasarela que la cadena le
+asignó, pero no puede borrarla ni asignarla a otros locales.
 
 ## 7. Validar las entradas en la puerta
 
