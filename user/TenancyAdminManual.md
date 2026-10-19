@@ -52,11 +52,9 @@ Entra al panel **MBTickets Web** con tu cuenta.
 
 ### 0.2 Crear el local
 
-Un **local** (venue) es un recinto: un teatro, un cine, un centro cultural. Las salas, los eventos y
-las ventas pertenecen a un local.
+Un **local** (venue) es un recinto: un teatro, un cine, un centro cultural. Las salas, los eventos y las ventas pertenecen a un local.
 
-Menú **Locales** → **Agregar Local**. Completa el nombre y los datos de contacto, y sube el logo: es
-el que verá el público en los correos de entradas.
+Menú **Locales** → **Agregar Local**. Completa el nombre y los datos de contacto, y sube el logo: es el que verá el público en los correos de entradas.
 
 ### 0.3 Elegir el local con el que trabajas
 

@@ -305,7 +305,7 @@ erDiagram
         uuid tenancy_id FK
         int system_checkout_gateway_id FK
         string name
-        json connection_params "credenciales del proveedor"
+        json connection_params "credenciales del proveedor, cifradas"
         boolean active
     }
     CHECKOUT_GATEWAY_TENANT {
