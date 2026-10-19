@@ -11,7 +11,7 @@
 | RBAC 2 capas (rutas + policies) | Core | ✅ Reutilizar tal cual | Solo se agregan permisos `mbtickets.*` |
 | Multi-tenancy (Tenancy→Tenant=Venue) + `scopeVisibleTo` | Core + patrón Inamap | ✅ Reutilizar patrón | `Tenant` se reutiliza con significado de negocio "Venue"; Tenancy Admin ve todos sus Tenants/venues |
 | Billing/suscripciones + límites por plan | Core + patrón Inamap/KitchnTabs | ✅ Reutilizar | Conteo propio del dominio (`MbTicketsPlanLimits`), incluye límite de nº de Salas por venue |
-| Pasarelas de pago (Flow/Transbank/Rebill/Interno) | KitchnTabs (`Services/Payments`) | ✅ Reutilizar arquitectura de gateway intercambiable | Genérico, no depende de comida |
+| Pasarelas de pago online (Transbank Webpay, Mercado Pago, DashTest) | **Core** (`app/CheckoutCore`, movido desde KitchnTabs) | ✅ Reutilizar tal cual | El core liquida el pago y emite `CheckoutTransactionSettled`; MBTickets lo escucha para confirmar la reserva, KitchnTabs para confirmar el pedido |
 | Notificaciones multicanal + websockets + colas | Core (Reverb/Horizon) | ✅ Reutilizar infraestructura | El **patrón de invocación** debe cambiar: eventos desacoplados, no llamada síncrona directa |
 | Panel admin genérico (`dash-auto-admin`) | Core | ✅ Reutilizar tal cual | |
 | DeviceCore (heartbeat, comandos, presencia) | Core | ✅ Reutilizar como base de POS/kiosko/boletería/torniquete | Falta lógica de dominio de validación de tickets encima |

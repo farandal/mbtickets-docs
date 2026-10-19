@@ -12,7 +12,7 @@
 - Laravel Sanctum (tokens API) + Socialite (OAuth Google).
 - Spatie: `laravel-permission`, `laravel-activitylog`, `laravel-medialibrary`.
 - `endroid/qr-code` ^5.0 (ya en el core) para render visual de QR.
-- Pasarelas de pago ya integradas a nivel de core/dominio hermano: Transbank, Flow, Rebill, Mercado Pago, gateway interno.
+- Pasarelas de pago: el **checkout online** (Transbank Webpay, Mercado Pago y la pasarela de prueba DashTest) vive en el core, en el módulo `app/CheckoutCore`, compartido con KitchnTabs (antes estaba en el dominio de KitchnTabs; se movió al core por decisión de producto, 2026-10-19). El cobro de suscripciones de la plataforma (Rebill, Flow) es otro módulo del core, y el pago con terminal físico es `PosPaymentCore` (doc 09).
 - Despliegue: Docker Compose (dominio bind-mounteado sobre el core), nginx + php-fpm tras AWS ALB, Cloudflare DNS, IaC vía CDK en repos hermanos.
 
 **Frontend**
