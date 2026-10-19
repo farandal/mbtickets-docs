@@ -151,7 +151,8 @@ erDiagram
 
 ```mermaid
 erDiagram
-    MBT_EVENT_CATEGORY ||--o{ MBT_EVENT_TYPE : "clasifica"
+    MBT_EVENT_CATEGORY ||--o{ MBT_EVENT_TYPE_CATEGORY : "clasifica"
+    MBT_EVENT_TYPE ||--o{ MBT_EVENT_TYPE_CATEGORY : "esta en"
     MBT_ROOM ||--o{ MBT_EVENT_TYPE : "se presenta en"
     MBT_EVENT_TYPE ||--o{ MBT_EVENT_SESSION : "se programa en"
     MBT_ROOM ||--o{ MBT_EVENT_SESSION : "ocupa"
@@ -165,7 +166,6 @@ erDiagram
     MBT_EVENT_TYPE {
         uuid id PK
         uuid room_id FK
-        uuid event_category_id FK
         string name
         int duration_minutes
         decimal base_price
@@ -180,6 +180,10 @@ erDiagram
         boolean partial_cancellation_allowed
         jsonb custom_attributes "libre del organizador"
     }
+    MBT_EVENT_TYPE_CATEGORY {
+        uuid event_type_id FK
+        uuid event_category_id FK
+    }
     MBT_EVENT_SESSION {
         uuid id PK
         uuid event_type_id FK
@@ -193,7 +197,7 @@ erDiagram
 
 | Entidad | En pantalla | Qué representa |
 |---|---|---|
-| **EventCategory** (`mbt_event_categories`) | Categoría | Una etiqueta de descubrimiento común a toda la plataforma ("Música", "Arte y Cultura"), para filtrar la cartelera. La administra la plataforma, no cada local. |
+| **EventCategory** (`mbt_event_categories`) | Categoría | Una etiqueta de descubrimiento común a toda la plataforma ("Música", "Arte y Cultura"), para filtrar la cartelera. La administra la plataforma, no cada local. Un evento puede estar en **varias** categorías ("Música" y "Familia"): la relación va por la tabla pivote `mbt_event_type_categories`. |
 | **EventType** (`mbt_event_types`) | Evento | **Lo que se presenta**: una obra, una película, un concierto. Reúne lo que comparten todas sus funciones: sala, duración, precio base y moneda, cierre de la venta y política de cancelación. Nace en borrador y no aparece en la cartelera hasta publicarlo. `custom_attributes` guarda datos libres del organizador (elenco, clasificación) que ningún proceso interpreta. |
 | **EventSession** (`mbt_event_sessions`) | Función | **Una presentación** del evento en un día y una hora, en su sala. Es la unidad que se vende: cada función tiene su propio inventario. También se publica por separado. Cancelarla anula todas sus ventas y las reembolsa. |
 

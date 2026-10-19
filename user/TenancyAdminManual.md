@@ -78,8 +78,11 @@ Asígnalos al local en el que trabajan.
 ### 0.5 Ten en cuenta
 
 - Los menús de los pasos siguientes están en la barra lateral, en los grupos **Eventos** y **Ventas**.
-- Para crear un registro usa el botón **+** de la esquina superior derecha. Ojo: cuando una lista está
-  vacía aparece un botón "Crear" en el centro que hoy no abre el formulario. Es un error conocido.
+- Para crear un registro usa el botón **+** de la esquina superior derecha: el formulario se abre a
+  página completa. Al hacer clic en una fila de una lista, el detalle se abre en un panel lateral;
+  desde ahí, **Editar** abre el formulario.
+- Ojo: cuando una lista está vacía aparece un botón "Crear" en el centro que hoy no abre el
+  formulario. Es un error conocido: usa el **+**.
 - Tu plan (menú **Suscripción**) define cuántas salas y cuántos eventos publicados puedes tener a la vez. El plan de prueba
   permite **1 sala** y **3 eventos publicados**. Si llegas al límite, el sistema te lo dice al guardar o
   al publicar.
@@ -146,7 +149,7 @@ Menú **Eventos → Eventos** → **+**. El formulario tiene tres pestañas.
 |---|---|
 | Nombre | "Hamlet". |
 | Sala | Sala Principal. Se elige al crear y no se puede cambiar después. |
-| Categoría | Ayuda a encontrarlo en la cartelera ("Arte y Cultura"). |
+| Categorías | Una o varias; ayudan a encontrarlo en la cartelera ("Arte y Cultura", "Familia"). Escribe para buscar y elige todas las que correspondan. |
 | Descripción | El texto que verá el público. |
 | Duración (min) | 120. Sirve para calcular cuándo termina cada función. |
 
