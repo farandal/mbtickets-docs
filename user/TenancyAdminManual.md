@@ -59,7 +59,9 @@ Menú **Locales** → **Agregar Local**. Completa el nombre y los datos de conta
 ### 0.3 Elegir el local con el que trabajas
 
 Como administrador de cadena ves todos tus locales. Antes de crear salas, eventos o funciones,
-**elige el local en el selector de la cabecera** (arriba, junto a las notificaciones). Todo lo que crees
+**elige el local en el selector de locales**: el ícono de tienda de la barra lateral izquierda,
+sobre la campana de notificaciones. Muestra la cuenta (vista de toda la cadena) y cada local. Si la
+cadena tiene un solo local, ya viene elegido. Todo lo que crees
 desde ese momento queda en ese local.
 
 Si te olvidas, al guardar aparece: *"Seleccione el venue (tenant) sobre el que se crea el recurso."*
@@ -270,7 +272,7 @@ marca para revisión cualquier entrada que se haya usado dos veces en equipos di
 
 ## Lista de verificación
 
-- [ ] El local existe y está elegido en el selector de la cabecera.
+- [ ] El local existe y está elegido en el selector de locales.
 - [ ] La sala existe y está activa.
 - [ ] Cada sector tiene sus butacas generadas (o su capacidad, si es admisión general).
 - [ ] El evento tiene precio y está **Publicado**.
@@ -282,8 +284,8 @@ marca para revisión cualquier entrada que se haya usado dos veces en equipos di
 
 | Mensaje o síntoma | Qué significa | Qué hacer |
 |---|---|---|
-| "Seleccione el venue (tenant) sobre el que se crea el recurso" | No hay un local elegido. | Elígelo en el selector de la cabecera (paso 0.3). |
-| No veo las salas o ventas de un local | El selector de la cabecera tiene elegido otro local. | Cambia de local en el selector. |
+| "Seleccione el venue (tenant) sobre el que se crea el recurso" | No hay un local elegido. | Elígelo en el selector de locales (paso 0.3). |
+| No veo las salas o ventas de un local | El selector de locales tiene elegido otro local. | Cambia de local en el selector. |
 | "La función se solapa con otra de la misma sala" | Otra función ocupa la sala a esa hora, contando el tiempo entre funciones. | Cambia el horario o revisa "Minutos entre funciones" de la sala. |
 | "Su plan permite hasta N salas / eventos publicados" | Llegaste al límite del plan. | Despublica (o retira) un evento que ya no se presenta, o cambia de plan. |
 | "La función no está a la venta" | La función o el evento siguen en borrador, o ya cerró la venta. | Publica ambos y revisa la fecha máxima de compra y el cierre de venta. |
