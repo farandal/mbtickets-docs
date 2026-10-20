@@ -11,6 +11,10 @@ pruebas y pendientes. Los requerimientos están en [`../requirements`](../requir
 | F04 | [Pago online de reservas y app del comprador](F04-pago-online-y-app-del-comprador.md) | FR-26, FR-01, HU-29 | Terminada (ramas `feat/booking-checkout`, `feat/buyer-app`) |
 | F05 | [Cancelaciones, reembolsos y correos al comprador](F05-cancelaciones-reembolsos-y-correos.md) | FR-25, FR-26.3, FR-10.2 | Terminada (ramas `feat/cancellations-refunds`, core `feat/checkout-core`) |
 | F06 | [Boletería y control de acceso en la app, roles de personal y app Android](F06-personal-en-la-app-y-android.md) | FR-08, HU-14, HU-16 | Terminada (ramas `feat/staff-app-roles`, `feat/staff-app`); APK sin probar en un teléfono |
+| F07 | [Puntos de venta y terminales de tarjeta en la boletería](F07-puntos-de-venta-y-terminales.md) | Doc 09: FR-20 a FR-23, HU-25 | Construida (ramas `feat/pos-terminals`); prueba con terminal real pendiente |
+
+Flujos transversales: [pagos](../flows/payment.md) (online, boletería, rechazos, aprobación tardía,
+reembolsos).
 
 Repositorios:
 
