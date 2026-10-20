@@ -257,11 +257,14 @@ Menú **Ventas → Pasarelas de pago** → **+**.
    suyas (por ejemplo, Transbank pide el código de comercio y si es modo de pruebas).
 4. **Guardar y verificar**: el proveedor revisa las credenciales y, si son válidas, la pasarela queda
    **Activa**.
-5. **Usar como predeterminada del venue**: es la que usa la app para cobrar en ese local. La primera
-   pasarela activa de un local queda como predeterminada.
+5. **Predeterminada por venue**: bajo las credenciales aparece cada local asignado. En cada uno,
+   **Usar como predeterminada** la hace la pasarela con la que la app cobra en ese local. Si la lista
+   está vacía, primero asigna locales en **Venues que la usan** y guarda. Solo una pasarela **Activa**
+   puede ser predeterminada.
 
-El administrador de un local puede configurar y elegir como predeterminada una pasarela que la cadena le
-asignó, pero no puede borrarla ni asignarla a otros locales.
+El administrador de un local ve un solo botón, **Usar como predeterminada del venue**, para su propio
+local. Puede configurar una pasarela que la cadena le asignó, pero no puede borrarla ni asignarla a
+otros locales. Si él crea la pasarela, queda como predeterminada de su local si este no tenía otra.
 
 ## 7. Validar las entradas en la puerta
 
@@ -310,7 +313,7 @@ marca para revisión cualquier entrada que se haya usado dos veces en equipos di
 | No veo las salas o ventas de un local | El selector de locales tiene elegido otro local. | Cambia de local en el selector. |
 | "La función se solapa con otra de la misma sala" | Otra función ocupa la sala a esa hora, contando el tiempo entre funciones. | Cambia el horario o revisa "Minutos entre funciones" de la sala. |
 | "Su plan permite hasta N salas / eventos publicados" | Llegaste al límite del plan. | Despublica (o retira) un evento que ya no se presenta, o cambia de plan. |
-| "La función no está a la venta" | La función o el evento siguen en borrador, o ya cerró la venta. | Publica ambos y revisa la fecha máxima de compra y el cierre de venta. |
+| "La función no está a la venta" / "El evento de esta función está en borrador" | La función o el evento siguen en borrador, o ya cerró la venta (el mensaje dice cuál). En Boletería, las funciones de un evento en borrador aparecen marcadas y no se pueden elegir. | Publica la función **y** su evento; si cerró, revisa la fecha máxima de compra y el cierre de venta. |
 | La función no aparece en la app | Igual que el anterior; además, se dejó de mostrar porque ya empezó. | Revisa la publicación y los cierres de venta. |
 | "No queda disponibilidad suficiente" | Otro vendedor u otro comprador tomó esas butacas un momento antes. | Elige otras. El sistema nunca vende la misma butaca dos veces. |
 | "Las butacas solo se crean en un sector con asientos numerados" | El sector es de tipo Admisión general. | Cambia el tipo a Butacas numeradas (si aún no tiene ventas). |
