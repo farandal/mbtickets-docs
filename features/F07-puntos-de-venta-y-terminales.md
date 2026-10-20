@@ -156,13 +156,21 @@ En el navegador (entorno de desarrollo, venue "teatro", ventanillas 1 y 2):
 - cobro con terminal: Mercado Pago rechazó el token de prueba y la reserva quedó retenida, como
   pide `keep_hold`.
 
-## 9. Pendiente
+## 9. Después de esta feature (2026-10-20)
+
+| Qué | Dónde |
+|---|---|
+| *Ventas > Cobros*: el listado de cobros de las ventanillas (`PosPaymentsList`). Las ventas con tarjeta de una reserva se devuelven cancelándolas desde la reserva, no desde el listado. | `mbtickets-frontend-domain` `2035d74`; `mbtickets-backend-domain` `2be9ca5`; [`payment.md`](../flows/payment.md) §11 |
+| "Conectar mi cuenta" de Mercado Pago (OAuth de la plataforma) en la integración de la ventanilla. | core `733f7ba`, `dash-pos-payments` `23741cf`; [`payment.md`](../flows/payment.md) §10 |
+| Los cobros pueden ir a un dispositivo del local (puente Raspberry Pi), que ejecuta el programa del local (`dash_core`). | core `16f1ea7`, `dash-python-service` `91c0f08` |
+| Los textos del core (`pos_payments.*`) salían como claves sin traducir: ahora se cargan. | core `94d1abf` |
+
+## 10. Pendiente
 
 - **Prueba con un terminal real** (runbook en la documentación del core, §14.4). Aún no hay
   acceso a un terminal.
-- **OAuth de la plataforma** para conectar la cuenta de Mercado Pago del venue
-  ([`payment.md`](../flows/payment.md) §10).
-- Listado de cobros por ventanilla con filtros (admin de pagos).
+- La **aplicación de Mercado Pago de MBTickets** para "Conectar mi cuenta", y una prueba en vivo.
 - Publicar `dash-pos-payments` en npm antes de construir para producción.
 - Kiosco VaneXa de MBTickets pagando en el terminal (doc 08).
-- Transbank (puente Raspberry Pi) y el servicio Python compartido (`mbtickets-python-service`).
+- El driver de Transbank (puente Raspberry Pi) y la capa de MBTickets del programa del local
+  (`domain/mbtickets/`: impresión de entradas, lector de control de acceso).

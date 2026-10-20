@@ -9,7 +9,7 @@
 > [F06](../features/F06-personal-en-la-app-y-android.md) (boletería en la app) y
 > [F07](../features/F07-puntos-de-venta-y-terminales.md) (puntos de venta y terminales de tarjeta).
 >
-> **Actualizado:** 2026-10-20.
+> **Actualizado:** 2026-10-20 (Cobros y "Conectar mi cuenta" construidos).
 
 ## 1. Las tres formas de cobrar
 
@@ -297,23 +297,49 @@ Las filas se acotan por venue: un cajero nunca ve las ventanillas ni los cobros 
 
 ## 10. Cuentas de Mercado Pago para los terminales
 
-El venue conecta su cuenta de dos maneras (decisión de producto). El detalle está en la
-documentación del core (PHYSICAL-POS-INTEGRATIONS §14.6):
+El venue conecta su cuenta de dos maneras (decisión de producto). Las dos están construidas. El
+detalle está en la documentación del core (PHYSICAL-POS-INTEGRATIONS §14.6):
 
-- **Token pegado** (construido). El venue crea su aplicación en Mercado Pago, pega el access
-  token en la integración de la ventanilla y configura el webhook en su aplicación.
-- **OAuth de la plataforma** (diseñado, sin construir). El venue pulsa "Conectar con Mercado Pago"
-  y autoriza la aplicación de MBTickets. El token dura 180 días y se renueva solo. El webhook se
-  configura una sola vez, en la aplicación de la plataforma.
+- **"Usar mi propia aplicación"** (token pegado). El venue crea su aplicación en Mercado Pago,
+  pega el access token en la integración de la ventanilla y configura el webhook en su aplicación.
+- **"Conectar mi cuenta"** (OAuth de la plataforma). El venue pulsa "Conectar con Mercado Pago",
+  inicia sesión en Mercado Pago y autoriza la aplicación de MBTickets; vuelve a la misma pantalla
+  con la cuenta conectada y elige el terminal.
+  - El token dura 180 días y se renueva solo cada día, cuando faltan 30. Si Mercado Pago lo
+    rechaza, el formulario pide reconectar.
+  - El webhook se configura una sola vez, en la aplicación de la plataforma.
+  - Para ofrecerlo, el backend necesita `POS_PAYMENT_MP_CLIENT_ID`,
+    `POS_PAYMENT_MP_CLIENT_SECRET` y `POS_PAYMENT_MP_WEBHOOK_SECRET` de la aplicación de
+    MBTickets. Esa aplicación aún no existe.
+
+Pegar un token propio reemplaza una conexión OAuth anterior.
 
 Las pasarelas **online** (Mercado Pago Checkout Pro) son otra integración, de CheckoutCore, con su
 propia configuración por venue (F02).
 
-## 11. Pendiente
+## 11. Cobros (listado de la boletería)
+
+*Ventas > Cobros* muestra todos los cobros de las ventanillas del venue, a mano o con terminal. Es
+el componente compartido con KitchnTabs (`PosPaymentsList`) y lo ven los administradores del
+venue, de la cadena y de la plataforma.
+
+- **Filtros:** ventanilla, estado, fechas y referencia (también el n.º de pago del adquirente o la
+  autorización), más "Revisar terminal" (los `action_required` de Mercado Pago) y "Resultados
+  tardíos".
+- **Seguir:** un cobro pendiente abre el mismo diálogo de la boletería, para cancelarlo o
+  confirmarlo a mano.
+- **Detalle:** todo lo guardado para conciliar, incluido el error del adquirente.
+- **Devolver:** **una venta con tarjeta de una reserva no se devuelve desde aquí.** Se devuelve
+  cancelándola desde la reserva (§6), que anula las entradas y deja el reembolso en su registro.
+  La fila muestra el botón deshabilitado con esa indicación. Los pagos a mano se devuelven a mano.
+
+## 12. Pendiente
 
 - Prueba con un terminal real (runbook en la documentación del core, §14.4). Aún no hay acceso a
   un terminal.
-- OAuth de la plataforma para Mercado Pago (§10).
-- Listado de cobros por ventanilla con filtros, en el admin de pagos.
-- Transbank POS Integrado por un puente Raspberry Pi, cuando llegue el hardware.
+- La aplicación de Mercado Pago de MBTickets para "Conectar mi cuenta", y una prueba en vivo
+  (§10).
+- Transbank POS Integrado por un puente Raspberry Pi, cuando llegue el hardware. El backend ya
+  manda los cobros a un dispositivo del local y el programa del local (`dash_core`) ya los
+  ejecuta; falta el driver de Transbank.
 - Pago en el terminal desde el kiosco VaneXa de MBTickets (doc 08). KitchnTabs ya lo hace.
