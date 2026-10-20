@@ -71,9 +71,12 @@ Si te olvidas, al guardar aparece: *"Seleccione el venue (tenant) sobre el que s
 Menú **Usuarios** → **Crear Usuario**.
 
 - Para el administrador del local, rol **Tenant**.
-- Para boletería y puerta, rol **User**.
+- Para quien vende en la boletería, rol **Cashier** (cajero): solo vende.
+- Para quien valida entradas en la puerta, rol **Access** (control de acceso): solo valida.
+- Para el organizador que edita eventos y funciones, rol **User**.
 
-Asígnalos al local en el que trabajan.
+Asígnalos al local en el que trabajan. El cajero y el control de acceso pueden trabajar desde el
+panel web o desde la **app de MBTickets** (también en Android): ver 6a y 7.
 
 ### 0.5 Ten en cuenta
 
@@ -229,6 +232,10 @@ Menú **Ventas → Boletería → Vender entradas**.
 
 Si el cliente se arrepiente antes de pagar, usa **Liberar**: las butacas vuelven a la venta al instante.
 
+**Desde la app (teléfono o tablet):** abre la app de MBTickets, toca **Acceso del personal** al pie de
+la cartelera e ingresa con el usuario del cajero. Es la misma boletería. En la app de Android las
+entradas se muestran en pantalla para que el cliente las fotografíe o escanee; no se imprimen.
+
 ## 6b. Vender online
 
 El público compra en la app **MBTickets** (en local, `http://localhost:5190`):
@@ -283,6 +290,10 @@ Menú **Ventas → Control de acceso → Validar entradas**.
 **Sin internet en la puerta:** antes de abrir, conéctate una vez para descargar el **kit offline**.
 Si se corta la red, el equipo sigue validando solo. Al volver la conexión sincroniza las lecturas y
 marca para revisión cualquier entrada que se haya usado dos veces en equipos distintos.
+
+**Desde la app (teléfono):** **Acceso del personal** → usuario con rol **Access**. La cámara del
+teléfono lee los QR; la primera vez Android pide permiso para usarla. El kit offline queda guardado
+en el teléfono aunque se cierre la app.
 
 ## 8. Después de vender
 
